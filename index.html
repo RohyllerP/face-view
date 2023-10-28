@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./img/logo.jpg">
+    <title>Desafio 3</title>
+</head>
+<style type="text/css">
+    header {
+        height: 50px;
+    }
+
+    .divHeaderImg {
+        background-color: #E4E6EB;
+        padding: 10px;
+        display: flex;
+        border-radius: 30px;
+    }
+
+    .arrow>img {
+        width: 18px;
+        height: 18px;
+    }
+
+    img,
+    svg {
+        cursor: pointer;
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    #menu {
+        margin-top: -5px;
+    }
+
+    .look {
+        position: absolute;
+        left: 20px;
+        top: 11px;
+        z-index: 9999;
+        filter: invert(30%) sepia(0%) saturate(45%) hue-rotate(271deg) brightness(101%) contrast(79%);
+    }
+
+    .main-badge {
+        position: relative;
+        top: 18px;
+        left: -52px;
+    }
+
+    @media screen and (max-width: 778px) {
+        .main-glu {
+            margin: 20px 0px;
+        }
+    }
+</style>
+
+<body class="bg-body-secondary">
+    <div class="modal" id="ventanita">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>CLickeaste dentro del carrusel</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <header class="bg-white shadow-sm ">
+        <nav
+            class="d-none d-lg-flex navbar navbar-expand-lg container-fluid pt-1 px-3  align-items-center justify-content-between  flex-wrap">
+            <!-- 1 -->
+            <div style="margin-top: -5px;" class="d-flex navbar-brand">
+                <div style="margin-top: -5px" class="navbar-brand">
+                    <img class="logo" src="img/Facebook.png" alt="facebook logo">
+                </div>
+                <div class="input-group mb-3">
+                    <svg fill="currentColor" viewBox="0 0 16 16" width="1em" height="1em"
+                        class="look x1k90msu x2h7rmj x1qfuztq xcza8v6 xlup9mm x1kky2od">
+                        <g fill-rule="evenodd" transform="translate(-448 -544)">
+                            <g fill-rule="nonzero">
+                                <path
+                                    d="M10.743 2.257a6 6 0 1 1-8.485 8.486 6 6 0 0 1 8.485-8.486zm-1.06 1.06a4.5 4.5 0 1 0-6.365 6.364 4.5 4.5 0 0 0 6.364-6.363z"
+                                    transform="translate(448 544)" />
+                                <path
+                                    d="M10.39 8.75a2.94 2.94 0 0 0-.199.432c-.155.417-.23.849-.172 1.284.055.415.232.794.54 1.103a.75.75 0 0 0 1.112-1.004l-.051-.057a.39.39 0 0 1-.114-.24c-.021-.155.014-.356.09-.563.031-.081.06-.145.08-.182l.012-.022a.75.75 0 1 0-1.299-.752z"
+                                    transform="translate(448 544)" />
+                                <path
+                                    d="M9.557 11.659c.038-.018.09-.04.15-.064.207-.077.408-.112.562-.092.08.01.143.034.198.077l.041.036a.75.75 0 0 0 1.06-1.06 1.881 1.881 0 0 0-1.103-.54c-.435-.058-.867.018-1.284.175-.189.07-.336.143-.433.2a.75.75 0 0 0 .624 1.356l.066-.027.12-.061z"
+                                    transform="translate(448 544)" />
+                                <path
+                                    d="m13.463 15.142-.04-.044-3.574-4.192c-.599-.703.355-1.656 1.058-1.057l4.191 3.574.044.04c.058.059.122.137.182.24.249.425.249.96-.154 1.41l-.057.057c-.45.403-.986.403-1.411.154a1.182 1.182 0 0 1-.24-.182zm.617-.616.444-.444a.31.31 0 0 0-.063-.052c-.093-.055-.263-.055-.35.024l.208.232.207-.206.006.007-.22.257-.026-.024.033-.034.025.027-.257.22-.007-.007zm-.027-.415c-.078.088-.078.257-.023.35a.31.31 0 0 0 .051.063l.205-.204-.233-.209z"
+                                    transform="translate(448 544)" />
+                            </g>
+                        </g>
+                    </svg>
+                    <input type="text" class="form-control ps-5 rounded-pill bg-body-secondary"
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                        placeholder="Buscar en facebook">
+                </div>
+            </div>
+            <!-- 2 -->
+            <ul class="navbar-nav d-flex d-none d-md-flex">
+                <li class="nav-item">
+                    <div class="px-2 pb-2 border-bottom border-2 border-primary">
+                        <svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq x5e5rjt text-primary"
+                            fill="currentColor" height="25" width="25">
+                            <path
+                                d="M25.825 12.29C25.824 12.289 25.823 12.288 25.821 12.286L15.027 2.937C14.752 2.675 14.392 2.527 13.989 2.521 13.608 2.527 13.248 2.675 13.001 2.912L2.175 12.29C1.756 12.658 1.629 13.245 1.868 13.759 2.079 14.215 2.567 14.479 3.069 14.479L5 14.479 5 23.729C5 24.695 5.784 25.479 6.75 25.479L11 25.479C11.552 25.479 12 25.031 12 24.479L12 18.309C12 18.126 12.148 17.979 12.33 17.979L15.67 17.979C15.852 17.979 16 18.126 16 18.309L16 24.479C16 25.031 16.448 25.479 17 25.479L21.25 25.479C22.217 25.479 23 24.695 23 23.729L23 14.479 24.931 14.479C25.433 14.479 25.921 14.215 26.132 13.759 26.371 13.245 26.244 12.658 25.825 12.29" />
+                        </svg>
+                    </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="px-4 pb-2">
+                        <div class="position-relative">
+                            <svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 text-secondary"
+                                fill="currentColor" height="25" width="25">
+                                <path
+                                    d="M8.75 25.25C8.336 25.25 8 24.914 8 24.5 8 24.086 8.336 23.75 8.75 23.75L19.25 23.75C19.664 23.75 20 24.086 20 24.5 20 24.914 19.664 25.25 19.25 25.25L8.75 25.25ZM17.163 12.846 12.055 15.923C11.591 16.202 11 15.869 11 15.327L11 9.172C11 8.631 11.591 8.297 12.055 8.576L17.163 11.654C17.612 11.924 17.612 12.575 17.163 12.846ZM21.75 20.25C22.992 20.25 24 19.242 24 18L24 6.5C24 5.258 22.992 4.25 21.75 4.25L6.25 4.25C5.008 4.25 4 5.258 4 6.5L4 18C4 19.242 5.008 20.25 6.25 20.25L21.75 20.25ZM21.75 21.75 6.25 21.75C4.179 21.75 2.5 20.071 2.5 18L2.5 6.5C2.5 4.429 4.179 2.75 6.25 2.75L21.75 2.75C23.821 2.75 25.5 4.429 25.5 6.5L25.5 18C25.5 20.071 23.821 21.75 21.75 21.75Z" />
+                            </svg>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                9+
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="px-4 pb-2">
+                        <svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 text-secondary"
+                            fill="currentColor" height="25" width="25">
+                            <path
+                                d="M17.5 23.75 21.75 23.75C22.164 23.75 22.5 23.414 22.5 23L22.5 14 22.531 14C22.364 13.917 22.206 13.815 22.061 13.694L21.66 13.359C21.567 13.283 21.433 13.283 21.34 13.36L21.176 13.497C20.591 13.983 19.855 14.25 19.095 14.25L18.869 14.25C18.114 14.25 17.382 13.987 16.8 13.506L16.616 13.354C16.523 13.278 16.39 13.278 16.298 13.354L16.113 13.507C15.53 13.987 14.798 14.25 14.044 14.25L13.907 14.25C13.162 14.25 12.439 13.994 11.861 13.525L11.645 13.35C11.552 13.275 11.419 13.276 11.328 13.352L11.155 13.497C10.57 13.984 9.834 14.25 9.074 14.25L8.896 14.25C8.143 14.25 7.414 13.989 6.832 13.511L6.638 13.351C6.545 13.275 6.413 13.275 6.32 13.351L5.849 13.739C5.726 13.84 5.592 13.928 5.452 14L5.5 14 5.5 23C5.5 23.414 5.836 23.75 6.25 23.75L10.5 23.75 10.5 17.5C10.5 16.81 11.06 16.25 11.75 16.25L16.25 16.25C16.94 16.25 17.5 16.81 17.5 17.5L17.5 23.75ZM3.673 8.75 24.327 8.75C24.3 8.66 24.271 8.571 24.238 8.483L23.087 5.355C22.823 4.688 22.178 4.25 21.461 4.25L6.54 4.25C5.822 4.25 5.177 4.688 4.919 5.338L3.762 8.483C3.729 8.571 3.7 8.66 3.673 8.75ZM24.5 10.25 3.5 10.25 3.5 12C3.5 12.414 3.836 12.75 4.25 12.75L4.421 12.75C4.595 12.75 4.763 12.69 4.897 12.58L5.368 12.193C6.013 11.662 6.945 11.662 7.59 12.193L7.784 12.352C8.097 12.609 8.49 12.75 8.896 12.75L9.074 12.75C9.483 12.75 9.88 12.607 10.194 12.345L10.368 12.2C11.01 11.665 11.941 11.659 12.589 12.185L12.805 12.359C13.117 12.612 13.506 12.75 13.907 12.75L14.044 12.75C14.45 12.75 14.844 12.608 15.158 12.35L15.343 12.197C15.989 11.663 16.924 11.663 17.571 12.197L17.755 12.35C18.068 12.608 18.462 12.75 18.869 12.75L19.095 12.75C19.504 12.75 19.901 12.606 20.216 12.344L20.38 12.208C21.028 11.666 21.972 11.666 22.62 12.207L23.022 12.542C23.183 12.676 23.387 12.75 23.598 12.75 24.097 12.75 24.5 12.347 24.5 11.85L24.5 10.25ZM24 14.217 24 23C24 24.243 22.993 25.25 21.75 25.25L6.25 25.25C5.007 25.25 4 24.243 4 23L4 14.236C2.875 14.112 2 13.158 2 12L2 9.951C2 9.272 2.12 8.6 2.354 7.964L3.518 4.802C4.01 3.563 5.207 2.75 6.54 2.75L21.461 2.75C22.793 2.75 23.99 3.563 24.488 4.819L25.646 7.964C25.88 8.6 26 9.272 26 9.951L26 11.85C26 13.039 25.135 14.026 24 14.217ZM16 23.75 16 17.75 12 17.75 12 23.75 16 23.75Z" />
+                        </svg>
+                    </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="px-4 pb-2">
+                        <svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 text-secondary"
+                            fill="currentColor" height="25" width="25">
+                            <path
+                                d="M25.5 14C25.5 7.649 20.351 2.5 14 2.5 7.649 2.5 2.5 7.649 2.5 14 2.5 20.351 7.649 25.5 14 25.5 20.351 25.5 25.5 20.351 25.5 14ZM27 14C27 21.18 21.18 27 14 27 6.82 27 1 21.18 1 14 1 6.82 6.82 1 14 1 21.18 1 27 6.82 27 14ZM7.479 14 7.631 14C7.933 14 8.102 14.338 7.934 14.591 7.334 15.491 6.983 16.568 6.983 17.724L6.983 18.221C6.983 18.342 6.99 18.461 7.004 18.578 7.03 18.802 6.862 19 6.637 19L6.123 19C5.228 19 4.5 18.25 4.5 17.327 4.5 15.492 5.727 14 7.479 14ZM20.521 14C22.274 14 23.5 15.492 23.5 17.327 23.5 18.25 22.772 19 21.878 19L21.364 19C21.139 19 20.97 18.802 20.997 18.578 21.01 18.461 21.017 18.342 21.017 18.221L21.017 17.724C21.017 16.568 20.667 15.491 20.067 14.591 19.899 14.338 20.067 14 20.369 14L20.521 14ZM8.25 13C7.147 13 6.25 11.991 6.25 10.75 6.25 9.384 7.035 8.5 8.25 8.5 9.465 8.5 10.25 9.384 10.25 10.75 10.25 11.991 9.353 13 8.25 13ZM19.75 13C18.647 13 17.75 11.991 17.75 10.75 17.75 9.384 18.535 8.5 19.75 8.5 20.965 8.5 21.75 9.384 21.75 10.75 21.75 11.991 20.853 13 19.75 13ZM15.172 13.5C17.558 13.5 19.5 15.395 19.5 17.724L19.5 18.221C19.5 19.202 18.683 20 17.677 20L10.323 20C9.317 20 8.5 19.202 8.5 18.221L8.5 17.724C8.5 15.395 10.441 13.5 12.828 13.5L15.172 13.5ZM16.75 9C16.75 10.655 15.517 12 14 12 12.484 12 11.25 10.655 11.25 9 11.25 7.15 12.304 6 14 6 15.697 6 16.75 7.15 16.75 9Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="px-4 pb-2">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="25px" height="25px"
+                            class="x1lliihq x1k90msu x2h7rmj x1qfuztq xcza8v6 x1fgtraw xgd8bvy text-secondary">
+                            <g fill-rule="evenodd" transform="translate(-444 -204)">
+                                <g>
+                                    <path fill-rule="nonzero"
+                                        d="m112.814 3.66.131.372c.906 2.604 1.096 3.988 1.049 7.846l-.013.79c-.047 2.636-1.194 4.295-3.022 4.728-1.509.358-3.257-.244-4.125-1.368-1.04-1.349-2.257-2.03-4.085-2.03h-1.497c-1.768 0-2.964.636-3.982 1.897l-.185.234c-.893 1.059-2.58 1.614-4.044 1.267-1.828-.433-2.974-2.092-3.022-4.729l-.012-.774c-.047-3.796.134-5.2.997-7.715l.182-.518C92.194.834 95.742-.075 98.14.746l.24.086.057.02.296.094c.216.066.451.132.7.194.876.22 1.749.351 2.548.353l.28-.004a11.218 11.218 0 0 0 2.306-.349c.25-.062.484-.128.7-.194l.296-.095.056-.019.241-.086c2.398-.821 5.946.088 6.954 2.914zm-6.701-1.411-.228.075c-.289.093-.61.185-.954.272-.985.246-1.972.395-2.908.397l-.328-.005a12.652 12.652 0 0 1-2.626-.392 15.362 15.362 0 0 1-.777-.216l-.337-.108-.325-.115c-1.711-.57-4.355.11-5.032 2.007l-.122.348c-.867 2.489-1.023 3.715-.966 7.614l.008.514c.037 1.992.756 3.033 1.868 3.297.941.222 2.088-.172 2.592-.825 1.309-1.697 2.948-2.613 5.274-2.613h1.497c2.325 0 3.964.916 5.273 2.612.504.654 1.65 1.048 2.592.826 1.113-.264 1.831-1.305 1.868-3.297l.008-.504c.058-3.917-.1-5.14-.973-7.645l-.115-.327c-.677-1.897-3.32-2.578-5.031-2.007l-.258.092z"
+                                        transform="translate(354 207)" />
+                                    <path fill-rule="nonzero"
+                                        d="M95.48 5.25v4a.75.75 0 1 0 1.5 0v-4a.75.75 0 1 0-1.5 0z"
+                                        transform="translate(354 207)" />
+                                    <path fill-rule="nonzero" d="M94.25 8h4a.75.75 0 1 0 0-1.5h-4a.75.75 0 1 0 0 1.5z"
+                                        transform="translate(354 207)" />
+                                    <path
+                                        d="M108.5 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m2 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-2 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-2-2a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
+                                        transform="translate(354 207)" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    </div>
+                </li>
+            </ul>
+            <!-- 3 -->
+            <div style="margin-top: -12px;" id="menu" class="d-flex align-items-center">
+                <div class="pe-3  align-items-center d-none d-md-flex">
+                    <img style="width: 30px; height: 30px; border-radius: 15px;" src="./img/logo.jpg"
+                        alt="rohyller foto">
+                    <p class="ps-2 fw-bold pt-3">Rohyller</p>
+                </div>
+                <div class="me-1 divHeaderImg d-md-none d-lg-flex">
+                    <svg fill="currentColor" viewBox="0 0 44 44" width="18px" height="18px"
+                        class="x1lliihq x1k90msu x2h7rmj x1qfuztq x198g3q0 x1qx5ct2 xw4jnvo">
+                        <circle cx="7" cy="7" r="6" />
+                        <circle cx="22" cy="7" r="6" />
+                        <circle cx="37" cy="7" r="6" />
+                        <circle cx="7" cy="22" r="6" />
+                        <circle cx="22" cy="22" r="6" />
+                        <circle cx="37" cy="22" r="6" />
+                        <circle cx="7" cy="37" r="6" />
+                        <circle cx="22" cy="37" r="6" />
+                        <circle cx="37" cy="37" r="6" />
+                    </svg>
+                </div>
+                <div class="mx-1 divHeaderImg position-relative">
+                    <svg viewBox="0 0 28 28" alt="" class="x1lliihq x1k90msu x2h7rmj x1qfuztq x198g3q0"
+                        fill="currentColor" height="18" width="18">
+                        <path
+                            d="M14 2.042c6.76 0 12 4.952 12 11.64S20.76 25.322 14 25.322a13.091 13.091 0 0 1-3.474-.461.956 .956 0 0 0-.641.047L7.5 25.959a.961.961 0 0 1-1.348-.849l-.065-2.134a.957.957 0 0 0-.322-.684A11.389 11.389 0 0 1 2 13.682C2 6.994 7.24 2.042 14 2.042ZM6.794 17.086a.57.57 0 0 0 .827.758l3.786-2.874a.722.722 0 0 1 .868 0l2.8 2.1a1.8 1.8 0 0 0 2.6-.481l3.525-5.592a.57.57 0 0 0-.827-.758l-3.786 2.874a.722.722 0 0 1-.868 0l-2.8-2.1a1.8 1.8 0 0 0-2.6.481Z" />
+                    </svg>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        1
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </div>
+                <div class="mx-1 divHeaderImg position-relative">
+                    <svg viewBox="0 0 28 28" alt="" class="x1lliihq x1k90msu x2h7rmj x1qfuztq x198g3q0"
+                        fill="currentColor" height="18" width="18">
+                        <path
+                            d="M7.847 23.488C9.207 23.488 11.443 23.363 14.467 22.806 13.944 24.228 12.581 25.247 10.98 25.247 9.649 25.247 8.483 24.542 7.825 23.488L7.847 23.488ZM24.923 15.73C25.17 17.002 24.278 18.127 22.27 19.076 21.17 19.595 18.724 20.583 14.684 21.369 11.568 21.974 9.285 22.113 7.848 22.113 7.421 22.113 7.068 22.101 6.79 22.085 4.574 21.958 3.324 21.248 3.077 19.976 2.702 18.049 3.295 17.305 4.278 16.073L4.537 15.748C5.2 14.907 5.459 14.081 5.035 11.902 4.086 7.022 6.284 3.687 11.064 2.753 15.846 1.83 19.134 4.096 20.083 8.977 20.506 11.156 21.056 11.824 21.986 12.355L21.986 12.356 22.348 12.561C23.72 13.335 24.548 13.802 24.923 15.73Z" />
+                    </svg>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        20+
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </div>
+                <div class="mx-2 divHeaderImg arrow">
+                    <img src="./img/arrow-down.png" alt="arrow down">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <div class="row">
+            <!-- 1 -->
+            <div class="d-none d-md-block col-3 ps-3">
+                <div class="align-items-center d-none d-md-flex">
+                    <img style="width: 30px; height: 30px; border-radius: 15px;" src="./img/logo.jpg"
+                        alt="Rohyller foto">
+                    <p class="ps-3 fw-bold pt-3">Rohyller Pereira Albarrán</p>
+                </div>  
+                <div style="cursor:pointer" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <div>
+                            <img src="img/grupo.png" alt="friend">
+                        </div>
+                        <div class="d-flex ps-3">
+                            <p class="fs-5">Amigos</p>
+                            <ul style="line-height: 2.5em; padding-left: 6px ;">
+                                <li class="main-badge text-primary">1 Solicitud</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Este es el de amigos <code>.accordion-flush</code></div>
+                    </div>
+                </div>
+                <div style="cursor:pointer" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="d-flex mt-1" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <div>
+                            <img src="img/grupos.png" alt="team">
+                        </div>
+                        <div class="ps-3">
+                            <p class="fs-5">Grupos</p>
+                        </div>
+                    </div>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Este es el de grupo<code>.accordion-flush</code></div>
+                    </div>
+                </div>
+                <div style="cursor:pointer" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="d-flex mt-1" data-bs-toggle="collapse" data-bs-target="#flush-collapseTres" aria-expanded="false" aria-controls="flush-collapseTres">
+                        <div>
+                            <img src="img/detallista.png" alt="team">
+                        </div>
+                        <div class="ps-3">
+                            <p class="fs-5">Marketplace</p>
+                        </div>
+                    </div>
+                    <div id="flush-collapseTres" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Este es el de marketplace<code>.accordion-flush</code></div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                    <div>
+                        <img src="img/watch.png" alt="friend">
+                    </div>
+                    <div class="d-flex ps-3">
+                        <p class="fs-5">Watch</p>
+                        <ul style="line-height: 2.5em; padding-left: 20px ;">
+                            <li class="main-badge text-primary">+9 actualizaciones</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex mt-1">
+                    <div>
+                        <img src="img/time.png" alt="team">
+                    </div>
+                    <div class="ps-3">
+                        <p class="fs-5">Recuerdos</p>
+                    </div>
+                </div>
+                <div class="d-flex mt-1">
+                    <div>
+                        <img src="img/guardado.png" alt="team">
+                    </div>
+                    <div class="ps-3">
+                        <p class="fs-5">Guardado</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                    <div>
+                        <img src="img/grupo.png" alt="friend">
+                    </div>
+                    <div class="d-flex ps-3">
+                        <p class="fs-5">Páginas</p>
+                        <ul style="line-height: 2.5em; padding-left: 6px ;">
+                            <li class="main-badge text-primary">+9 actualizaciones</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-1">
+                    <div>
+                        <img src="img/calendario.png" alt="friend">
+                    </div>
+                    <div class="d-flex ps-3">
+                        <p class="fs-5">Eventos</p>
+                        <ul style="line-height: 2.5em; padding-left: 6px ;">
+                            <li class="main-badge text-primary">1 Notificación</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex mt-1">
+                    <div>
+                        <img src="img/portafolio.png" alt="team">
+                    </div>
+                    <div class="ps-3">
+                        <p class="fs-5">Empleos</p>
+                    </div>
+                </div>
+                <div style="margin-top: -10px;" class="d-flex">
+                    <div style="background-color: #E4E6EB;
+                    padding: 5px 8px;
+                    border-radius: 20%;" class="arrow">
+                        <img style="margin-top: 12px;" src="./img/arrow-down.png" alt="arrow down">
+                    </div>
+                    <div style="margin-left: 13px;" class="mt-1">
+                        <p class="fs-5">Ver más</p>
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <!-- 2 -->
+            <div class="mt-3 col-md-6 col-sm-12 align-items-center">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <!-- 1 -->
+                        <div class="row g-2">
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-primary"></div>
+                            </div>
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-primary"></div>
+                            </div> 
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-primary"></div>
+                            </div>  
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-primary"></div>
+                            </div>
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-primary"></div>
+                            </div>   
+                        </div>
+                      </div>
+                      <!-- 2 -->
+                      <div class="carousel-item">
+                        <div class="row g-2">
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-success"></div>
+                            </div>
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-success"></div>
+                            </div>
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-success"></div>
+                            </div> 
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-success"></div>
+                            </div>
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-success"></div>
+                            </div>  
+                        </div>
+                      </div>
+                      <!-- 3 -->
+                      <div class="carousel-item">
+                        <div class="row g-2">
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-info"></div>
+                            </div>  
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-info"></div>
+                            </div>    
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-info"></div>
+                            </div>    
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-info"></div>
+                            </div>  
+                            <div style="cursor: pointer;" class="col" data-bs-toggle="modal" data-bs-target="#ventanita">
+                                <div style="height: 150px; display:block;" class="bg-info"></div>
+                            </div>    
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+                <!-- card -->
+                <div class="d-flex justify-content-center mt-3 ">
+                    <div class="card rounded pe-2" style="width: 100%;">
+                        <div class="card-header bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-end">
+                                        <img src="./img/logo.jpg" style="width: 40px; height: 40px; border-radius: 50%;">
+                                        <div style="border: 2px solid white; position:relative; left: -13px; width: 12px; height: 12px; border-radius: 50%;" class="bg-success"></div>
+                                    </div>
+                                    <div class="ps-2">
+                                        <h6 class="card-title fw-bold">Rohyller Pereira albarran</h6>
+                                        <p style="line-height: 0.8em;" class="card-text text-secondary">27 de agosto ● <img style="filter: invert(45%) sepia(7%) saturate(543%) hue-rotate(172deg) brightness(95%) contrast(87%);" src="./img/amigos.png"></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img style="filter: invert(45%) sepia(7%) saturate(543%) hue-rotate(172deg) brightness(95%) contrast(87%); transform: rotate(90deg);" src="./img/dots.png">
+                                </div>
+                            </div>
+                            <div>
+                                <p style="line-height: 0.7em;" class="card-text pt-2">Ya reiniciamos.</p>
+                                <p style="line-height: 0.5em;" class="card-text">Vamos con Dios, vamos con todo.</p>
+                            </div>
+                        </div>
+                        <div style="background-image: url(./img/desafio.jpg);
+                        background-size: cover;
+                        height: 58vh;" class="card-body">
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="border-bottom pb-2 d-flex align-items-center">
+                                <img style="width: 20px; height: 20px;" src="img/like.png">
+                                <p class="card-text ps-2 text-secondary">Maria Alejandra</p>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom px-4 py-2">
+                                <div class="d-flex align-items-center">
+                                    <img style="filter: invert(45%) sepia(7%) saturate(543%) hue-rotate(172deg) brightness(95%) contrast(87%);" src="./img/pulgar.png" />
+                                    <p class="ps-2 text-secondary fw-bolder m-auto">Me gusta</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img style="filter: invert(45%) sepia(7%) saturate(543%) hue-rotate(172deg) brightness(95%) contrast(87%)" src="./img/comentario.png"/>
+                                    <p class="ps-2 fw-bolder m-auto text-secondary">Comentario</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img style="filter: invert(45%) sepia(7%) saturate(543%) hue-rotate(172deg) brightness(95%) contrast(87%)" src="./img/compartir.png"/>
+                                    <p class="ps-2 fw-bolder m-auto text-secondary">Compartir</p>
+                                </div>
+                            </div>
+                            <div class="pt-3 row">
+                                <div class="d-flex align-items-end col-1">
+                                    <img style="width: 40px; height: 40px; border-radius: 50%;" src="./img/eduardo.jpg"/>
+                                    <div style="border: 2px solid white; position:relative; left: -10px; width: 15px; height: 15px; border-radius: 50%;" class="bg-success"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input style="border: none;" type="text" class=" form-control ps-3 bg-body-secondary py-2 rounded-pill" placeholder="Escribe un comentario..." aria-label="comentario" aria-describedby="basic-addon1">
+                                        <img style="position: absolute; right: 20px; top: 12px;" src="./img/amigos.png"/>
+                                        <img style="position: absolute; right: 40px; top: 12px;" src="./img/amigos.png"/>
+                                        <img style="position: absolute; right: 60px; top: 12px;" src="./img/amigos.png"/>
+                                        <img style="position: absolute; right: 80px; top: 12px;" src="./img/amigos.png"/>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                <form id="form"
+                    class="needs-validation mt-4 py-4 ps-3 pe-5 container-fluid border border-2 rounded border-secondary"
+                    novalidate>
+                    <div class="mb-3 row">
+                        <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" placeholder="nombre" required>
+                            <div class="valid-feedback">
+                                Correcto todos los datos
+                            </div>
+                            <div class="invalid-feedback">
+                                Escribe un nombre valido
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="password"
+                                required>
+                            <div class="valid-feedback">
+                                Correcto todos los datos
+                            </div>
+                            <div class="invalid-feedback">
+                                Escribe una contraseña valida
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Correo</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com" required>
+                            <div class="valid-feedback">
+                                Correcto todos los datos
+                            </div>
+                            <div class="invalid-feedback">
+                                Escribe un correo valido
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <div class="valid-feedback">
+                            Seleccionado
+                        </div>
+                        <div class="invalid-feedback">
+                            Selecciona lo
+                        </div>
+                    </div>
+                    <div class="px-3 d-flex position-relative">
+                        <button style="width:100%;" type="submit" class="btn btn-success">Confirmar</button>
+                        <button style="width:100%;" type="button" class="btn  btn-danger ms-3">Eliminar</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 3 -->
+            <div class="d-none d-md-block col mt-3">
+                <div class="p-3 rounded bg-white shadow-sm">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img src="img/grupo.png" alt="">
+                            <p class="fw-bold pt-2 ps-2">Solicitudes de amistad</p>
+                        </div>
+                        <div>
+                            <img style="margin-top:10px; transform: rotate(90deg);" src="img/menu.png" alt="">
+                        </div>
+                    </div>
+                    <div class="ps-2 d-flex ">
+                        <div>
+                            <img style="width: 60px; height:60px; border-radius: 50%;" src="img/paisaje.jpg" alt="">
+                        </div>
+                        <div>
+                            <div class="d-flex">
+                                <div class="ps-2">
+                                    <p class="fw-bold">Gender Mejia</p>
+                                </div>
+                                <div class="ps-5">
+                                    <p class="text-primary">1 sem ●</p>
+                                </div>
+                            </div>
+                            <div style="left: 9px; top: -12px;" class="d-flex position-relative">
+                                <div>
+                                    <img style="width: 20px; height:20px; border-radius: 50%;" src="img/paisaje.jpg"
+                                        alt="">
+                                    <img style="margin-left: -10px; width: 20px; height:20px; border-radius: 50%;"
+                                        src="img/paisaje.jpg" alt="">
+                                </div>
+                                <div class="ps-1">
+                                    <p>10 amigos en común</p>
+                                </div>
+                            </div>
+                            <div style="top: -10px;" class="d-flex position-relative">
+                                <button data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" type="button" class="btn btn-primary ms-2">Confirmar</button>
+                                <button type="button" class="btn btn-secondary ms-2">Eliminar</button>
+                            </div>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                  Este es el collapse
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div>
+                    <h4>Publicidad</h4>
+                    <div class="d-flex mt-2">
+                        <div>
+                            <img class="rounded" style="width: 150px; height: 150px;" src="img/paisaje.jpg" alt="">
+                        </div>
+                        <div class="ms-3">
+                            <p>
+                                Fast,Reliable y Cheap Managed Cloud Web Hosting Service-...
+                            </p>
+                            <p>www.interserver.net</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-2">
+                        <div>
+                            <img class="rounded" style="width: 150px; height: 150px;" src="img/paisaje2.jpg" alt="">
+                        </div>
+                        <div class="ms-3">
+                            <p>FlatWorld.Co</p>
+                            <p>jobs.flatworld.co</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>
